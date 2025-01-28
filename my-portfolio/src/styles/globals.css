@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a; /* Dark background */
+  --foreground: #ededed; /* Light text */
+  --primary-color: #1e90ff; /* Deep Cobalt Blue */
+  --secondary-color: #0047ab; /* Darker Cobalt Blue */
+  --accent-color: #ff6347; /* Accent color for highlights */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Gradient background for the index page */
+.bg-gradient-dark {
+  background: linear-gradient(
+    135deg,
+    var(--background) 0%,
+    #1a1a1a 50%,
+    var(--background) 100%
+  );
+}
+
+/* Bubble effect for cards */
+.bubble {
+  background: var(--primary-color);
+  color: var(--foreground);
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bubble:hover {
+  transform: scale(1.05);
+  background: var(--secondary-color);
+}
+
+/* Navbar styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  z-index: 50;
+  transition: transform 0.3s;
+}
+
+.navbar.hidden {
+  transform: translateX(100%);
+}
+
+.navbar.visible {
+  transform: translateX(0);
+}
+
+.navbar-toggle {
+  cursor: pointer;
+  color: var(--foreground);
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.navbar-links a {
+  color: var(--foreground);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Contact form styling */
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  color: var(--foreground);
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form button {
+  background: var(--primary-color);
+  color: var(--foreground);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: var(--secondary-color);
+}
+
+/* Service card styling */
+.service-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
